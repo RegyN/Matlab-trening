@@ -4,7 +4,6 @@
 function [C, exitval] = eliminacjaGaussaPartial(A)
 
 for i = 1: size(A,1)
-    
     % Robie pivot
     [~,index] = max(abs(A(i:size(A,1),i)));
     A([index+i-1, i],:) = A([i, index+i-1],:);
