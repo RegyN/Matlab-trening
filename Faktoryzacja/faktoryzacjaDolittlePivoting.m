@@ -11,6 +11,10 @@ U = zeros(size(A));
 % G³ówna pêtla faktoryzacji
 for i = 1:size(A)
     
+    % Pivoting wierszami
+    [val, index] = max(abs( A(i:size(A,1),i) ))
+    A([index+i-1, i],:) = A([i, index+i-1],:);
+    
     for j = i:size(A)
        
         U(i,j) = A(i,j) - dot(L(i,:),U(:,j));
