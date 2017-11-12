@@ -1,4 +1,8 @@
-function [x, val, exitflag] = Sympleks(f,A,b)
+% Metoda M jest stosowana do rozwi¹zywania uk³adów z ograniczeniami typu >=
+% i ==. Wejœciami tej funkcji beda macierze jak w zwyklym sympleksie, tyle
+% ze z równoœciami a nie <= jak w sympleksie.
+
+function [x, val, exitflag] = SympleksM(f,A,b)
 
 % Sprawdzanie wymiarów macierzy
 if size(f,2)~=size(A,2) || size(b,2)~=size(A,1)
@@ -6,14 +10,17 @@ if size(f,2)~=size(A,2) || size(b,2)~=size(A,1)
     exitflag = -1;
     return;
 end
+
+M=1000; % wartoœæ wspó³czynnika M, mo¿na zmieniæ jak coœ.
+
 % Dodaje zmienne dope³niaj¹ce, ustalam wartoœci tablic wymagane przez
 % algorytm.
 n = size(A,1);  % liczba równañ
 m = size(A,2);  % liczba zmiennych pocz¹tkowych
 bf=b';
 A = [A, eye(n)];
-f= [f, zeros(1,n)];
-f=-f;
+f= [f, repelem(-M,n)];
+f=f;
 baza = m+1:m+n;
 cb = f(baza)';
 c=f;
