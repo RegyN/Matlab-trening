@@ -1,3 +1,3 @@
-W tym repozytorium są moje skrypty Matlaba utworzone podczas nauki.
+W tym repozytorium są moje skrypty Matlaba utworzone podczas nauki. Wrzucam tu różne skrypty wykonujące algorytmy typu całkowanie numeryczne, eliminacja Gaussa itd.
 
-Będę tu wrzucał różne skrypty wykonujące algorytmy typu całkowanie numeryczne, eliminacja Gaussa itd.
+Materiały do pierwszych trzech laborek z Programowania Matematycznego to skrypty z folderu Sympleks.
