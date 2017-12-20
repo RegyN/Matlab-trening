@@ -1,10 +1,11 @@
 function [x, val] = Fibonacci(f, a, b, n, eps)
-fib = zeros(1,n);
+d0 = b-a;
 fib(1) = 1;
 fib(2) = 1;
-for i = 3:n
-    fib(i) = fib(i-1)+fib(i-2);
-end
+i = 2;
+while (d0/eps > fib(i))
+    i = i+1;
+    fib(i) = fib(i-1) + fib(i-2);
 
 bNew = a + fib(n-1)/fib(n)*(b-a);
 aNew = b - fib(n-1)/fib(n)*(b-a);
