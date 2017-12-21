@@ -1,8 +1,7 @@
 function [x, val, it] = NajszybszySpadek(f, x0, eps)
     addpath('..\Kierunkowa');
     
-    x=x0;
-    x=x';
+    x=x0';
     [~,d] = f(x);
     d=-d;
     a=0;
