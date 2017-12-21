@@ -11,14 +11,14 @@ function [x, val, it] = NajszybszySpadek(f, x0, eps)
     while norm(d)>eps
         F = @(alfa) f(x+alfa*d);
         [~,~,b] = GetRange(F, a, 0.1);
-        [alfa,~] = GoldenRatio(F,a,b,e_zp);
+        [krok,~] = GoldenRatio(F,a,b,e_zp);
         xOld = x;
-        x = x+alfa*d;
+        x = x+krok*d;
         [~,d] = f(x);
         d=-d;
         if norm(x-xOld)<eps
             break;
-        end;
+        end
         it = it+1;
     end
     val = f(x);
