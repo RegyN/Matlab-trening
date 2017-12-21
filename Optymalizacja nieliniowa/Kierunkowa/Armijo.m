@@ -1,7 +1,7 @@
-function [x, val] = Armijo(f, g, a, ro, k, eps)
+function [x, val] = Armijo(f, a, ro, k, eps, kier)
 % Wersja alg. Armijo u¿ywaj¹ca kontrakcji i ekspansji
-    f0 = f(0);  % wartoœæ f w 0
-    g0 = g(0);  % pochodna w 0
+    [f0, g0] = f(0);
+    g0 = dot(g0, kier);
     amax = 100;
     i = 1;
     fa = f(a);
