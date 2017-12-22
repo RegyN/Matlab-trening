@@ -29,8 +29,5 @@ disp(sprintf('[*] min DFP = %f ;x = (%f, %f, %f) ;it =: %f [*]\n',fval,xmin,it))
 [xmin,fval,it]=Hooke(@fun, x0, 1e-3);
 disp(sprintf('[*] min Hooke = %f ;x = (%f, %f, %f) ;it =: %f [*]\n',fval,xmin,it))
 
-%[xmin,fval,it]=Powell(@fun,x0,1e-6);
-%disp(sprintf('[*] min Powell-gold = %f ;x = (%f, %f, %f) ;it =: %f [*]\n',fval,xmin,it))
-
-%[xmin,fval,it]=Powell_mPoint(@fun,x0,1e-6);
-%disp(sprintf('[*] min Powell-mPoint = %f ;x = (%f, %f, %f) ;it =: %f [*]\n',fval,xmin,it))
+[xmin,fval,it]=Powell(@fun,x0,1e-6);
+disp(sprintf('[*] min Powell = %f ;x = (%f, %f, %f) ;it =: %f [*]\n',fval,xmin,it))

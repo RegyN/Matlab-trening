@@ -10,7 +10,8 @@ function [x, val, it] = NajszybszySpadek(f, x0, eps)
     while norm(d)>eps
         F = @(alfa) f(x+alfa*d);
         [~,~,b] = GetRange(F, a, 0.1);
-        [krok,~] = GoldenRatio(F,a,b,e_zp);
+        [krok,~] = Armijo(F, 0.01, 0.2, 2, e_zp, d);
+        % [krok,~] = Dichotomy(F,a,b,e_zp);
         xOld = x;
         x = x+krok*d;
         [~,d] = f(x);

@@ -1,4 +1,4 @@
-function [x, val] = Fibonacci(f, a, b, n, eps)
+function [x, val] = Fibonacci(f, a, b, eps)
 d0 = b-a;
 fib(1) = 1;
 fib(2) = 1;
@@ -6,6 +6,8 @@ i = 2;
 while (d0/eps > fib(i))
     i = i+1;
     fib(i) = fib(i-1) + fib(i-2);
+end
+n=i;
 
 bNew = a + fib(n-1)/fib(n)*(b-a);
 aNew = b - fib(n-1)/fib(n)*(b-a);
