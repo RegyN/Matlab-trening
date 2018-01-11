@@ -4,7 +4,7 @@ function [x, val, exitflag] = EliminacjaUogolniona(D, c, A, b)
 n = size(A,2);  %liczba równañ
 m = size(A,1);  %liczba ograniczeñ
 V = [eye(n-m); 
-    zeros(1, n-m)];
+    zeros(m, n-m)];
 
 AV = [A',V];
 AV = inv(AV);
