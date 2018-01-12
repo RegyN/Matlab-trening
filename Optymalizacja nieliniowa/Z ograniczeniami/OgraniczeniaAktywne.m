@@ -68,8 +68,5 @@ function [x, val, exitflag] = OgraniczeniaAktywne(D, c, A, b, x0, eps)
             end
         end
     end
-    
-    
-    
 end
 
