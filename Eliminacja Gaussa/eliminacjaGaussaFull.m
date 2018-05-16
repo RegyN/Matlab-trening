@@ -1,14 +1,13 @@
 function C = eliminacjaGaussaFull(A)
 
+n=size(A,1);
 for i = 1:size(A,1)
     
-    % Najpierw zrób pivoting wierszami
-    [~, index] = max( abs( A( i:size(A,1), i)));
-    A([index+i-1,i],:) = A([i,index+i-1],:);
-    
-    % Potem pivoting kolumnami
-    [~, index] = max( abs( A( i, i:size(A,1))));
-    A(:,[index+i-1,i]) = A(:,[i,index+i-1]);
+    [maxes, rows] = max( abs( A( i:n, i:n)));
+    [~, col] = max( abs(maxes));
+    row = rows(col);
+    A(:,[col+i-1,i]) = A(:,[i,col+i-1]);
+    A([row+i-1,i],:) = A([i,row+i-1],:);
     
     % A teraz zrób eliminacjê
     mul = A(:,i)/A(i,i);
